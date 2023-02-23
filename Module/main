@@ -5,19 +5,23 @@ function module:CheckPlayer(Name)
 		if string.lower(v.Name) == string.lower(Name) then
 		    --print(v)
 			plr = v
+			print('found')
 			break
 
 		elseif string.find(string.lower(v.Name),string.lower(Name)) ~= nil then
 		    --print(v)
 			plr = v
+			print('found')
 			break
 		elseif string.lower(v.DisplayName) == string.lower(Name) then
 		    --print(v)
 			plr = v
+			print('found')
 			break
 		elseif string.find(string.lower(v.DisplayName),string.lower(Name)) ~= nil then
 		    --print(v)
 			plr = v
+			print('found')
 			break
 		else
 		    print('not found')
