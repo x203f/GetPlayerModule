@@ -1,5 +1,6 @@
 local module = {}
 function module:CheckPlayer(Name)
+    --[[
     local plr
 	for i,v in pairs(game.Players:GetPlayers()) do
 		if string.lower(v.Name) == string.lower(Name) then
@@ -30,6 +31,24 @@ function module:CheckPlayer(Name)
 	end
 	print(plr)
 	return plr
+	--]]
+    local plr
+    for i,v in pairs(game.Players:GetPlayers()) do
+        if string.lower(v.Name) == string.lower(Name)
+                or string.find(string.lower(v.Name), string.lower(Name))
+                or string.lower(v.DisplayName) == string.lower(Name)
+                or string.find(string.lower(v.DisplayName), string.lower(Name)) then
+            plr = v
+            print('Player found')
+            break
+        end
+    end
+    if plr then
+        print(plr)
+    else
+        print('Player not found')
+    end
+    return plr
 end
 function module:GetFullPlayer(plrhumobj)
     local plr
