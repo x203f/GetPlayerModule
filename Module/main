@@ -104,7 +104,7 @@ function module:CheckIfMeOrPlayer(args,argNumIndex)
 	    if a then
             print(a.ClassName)
 		    plr = a.Character:FindFirstChildOfClass('Humanoid')
-		    print("Got "..plr)
+		    print("Got "..plr.ClassName)
 		    if plr == game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid") then
 		        plr = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
 		    end
