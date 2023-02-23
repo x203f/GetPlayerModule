@@ -2,17 +2,17 @@ local module = {}
 function module:CheckPlayer(Name)
 	for i,v in pairs(game.Players:GetPlayers()) do
 		if string.lower(v.Name) == string.lower(Name) then
-		    print(v)
+		    --print(v)
 			return v
 
 		elseif string.find(string.lower(v.Name),string.lower(Name)) ~= nil then
-		    print(v)
+		    --print(v)
 		    return v
 		elseif string.lower(v.DisplayName) == string.lower(Name) then
-		    print(v)
+		    --print(v)
 		    return v
 		elseif string.find(string.lower(v.DisplayName),string.lower(Name)) ~= nil then
-		    print(v)
+		    --print(v)
 		    return v
 		else
 		    continue
@@ -40,7 +40,7 @@ function module:CheckIfMeOrPlayer(args,argNumIndex)
     elseif string.find(string.lower(game.Players.LocalPlayer.Name),string.lower(args[argNumIndex])) then
         plr = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
 	else
-	    if module:CheckPlayer(args[argNumIndex]) then
+	    if module:CheckPlayer(string.lower(args[argNumIndex])) then
 
 		    plr = CheckPlayer(args[argNumIndex]).Character:FindFirstChildOfClass('Humanoid')
 		end
