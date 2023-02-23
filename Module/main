@@ -1,24 +1,30 @@
 local module = {}
 function module:CheckPlayer(Name)
+    local plr
 	for i,v in pairs(game.Players:GetPlayers()) do
 		if string.lower(v.Name) == string.lower(Name) then
 		    --print(v)
-			return v
+			plr = v
+			break
 
 		elseif string.find(string.lower(v.Name),string.lower(Name)) ~= nil then
 		    --print(v)
-		    return v
+			plr = v
+			break
 		elseif string.lower(v.DisplayName) == string.lower(Name) then
 		    --print(v)
-		    return v
+			plr = v
+			break
 		elseif string.find(string.lower(v.DisplayName),string.lower(Name)) ~= nil then
 		    --print(v)
-		    return v
+			plr = v
+			break
 		else
+		    print('not found')
 		    continue
 		end
 	end
-	return false
+	return plr
 end
 function module:GetFullPlayer(plrhumobj)
     local plr
