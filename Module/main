@@ -100,9 +100,10 @@ function module:CheckIfMeOrPlayer(args,argNumIndex)
     elseif string.find(string.lower(game.Players.LocalPlayer.Name),string.lower(args[argNumIndex])) then
         plr = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
 	else
-	    if module:CheckPlayer(args[argNumIndex]) then
-
-		    plr = CheckPlayer(args[argNumIndex]).Character:FindFirstChildOfClass('Humanoid')
+	    local a = module:CheckPlayer(args[argNumIndex])
+	    if a then
+            print(a.ClassName)
+		    plr = a.Character:FindFirstChildOfClass('Humanoid')
 		    print("Got "..plr)
 		    if plr == game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid") then
 		        plr = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
