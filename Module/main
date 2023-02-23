@@ -24,6 +24,7 @@ function module:CheckPlayer(Name)
 		    continue
 		end
 	end
+	print(plr)
 	return plr
 end
 function module:GetFullPlayer(plrhumobj)
